@@ -1,0 +1,8 @@
+.agents/
+.browser-check*/
+.seo-browser-check*/
+tmp-*.png
+*.tar.gz
+gcm-diagnose.log
+.DS_Store
+Thumbs.db
