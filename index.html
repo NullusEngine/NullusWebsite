@@ -21,15 +21,15 @@
     <meta property="og:title" content="Nullus Engine｜C++20 原生实时 3D 游戏引擎" />
     <meta property="og:description" content="从场景、资产和脚本，到 Editor、运行时与多后端渲染，使用同一条原生引擎主线。" />
     <meta property="og:url" content="https://www.nullusengine.com/zh-cn/" />
-    <meta property="og:image" content="https://www.nullusengine.com/assets/editor.png" />
-    <meta property="og:image:alt" content="Nullus Editor 场景编辑器与实时 3D 视图" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="3840" />
-    <meta property="og:image:height" content="2088" />
+    <meta property="og:image" content="https://www.nullusengine.com/assets/og-cover.jpg" />
+    <meta property="og:image:alt" content="Nullus Engine 编辑器和实时 3D 场景" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Nullus Engine｜C++20 原生实时 3D 游戏引擎" />
     <meta name="twitter:description" content="面向实时 3D 创作的 C++20 原生引擎，连接 Editor、运行时、资产与多后端渲染。" />
-    <meta name="twitter:image" content="https://www.nullusengine.com/assets/editor.png" />
+    <meta name="twitter:image" content="https://www.nullusengine.com/assets/og-cover.jpg" />
     <title>Nullus Engine｜C++20 原生实时 3D 游戏引擎</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,43 +37,65 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="assets/NullusIcon.svg" type="image/svg+xml" />
+    <link rel="icon" href="assets/favicon.png" type="image/png" sizes="96x96" />
     <link rel="stylesheet" href="styles.css" />
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "WebSite",
-            "@id": "https://www.nullusengine.com/#website",
-            "url": "https://www.nullusengine.com/",
-            "name": "Nullus Engine",
-            "description": "A native C++20 engine for real-time 3D creation.",
-            "publisher": { "@id": "https://www.nullusengine.com/#organization" }
-          },
-          {
-            "@type": "Organization",
-            "@id": "https://www.nullusengine.com/#organization",
-            "name": "Nullus Engine",
-            "url": "https://www.nullusengine.com/",
-            "logo": "https://www.nullusengine.com/assets/NullusIcon.svg",
-            "sameAs": ["https://github.com/NullusEngine/Nullus"]
-          },
-          {
-            "@type": "SoftwareApplication",
-            "@id": "https://www.nullusengine.com/#software",
-            "name": "Nullus Engine",
-            "url": "https://www.nullusengine.com/",
-            "description": "A native C++20 engine for real-time 3D creation with an Editor, FrameGraph rendering, multi-backend RHI, C# and Lua scripting, asset workflows, and desktop Player builds.",
-            "applicationCategory": "GameDevelopmentTool",
-            "operatingSystem": ["Windows", "Linux", "macOS"],
-            "programmingLanguage": "C++20",
-            "image": "https://www.nullusengine.com/assets/editor.png",
-            "codeRepository": "https://github.com/NullusEngine/Nullus",
-            "publisher": { "@id": "https://www.nullusengine.com/#organization" }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.nullusengine.com/#website",
+      "url": "https://www.nullusengine.com/",
+      "name": "Nullus Engine",
+      "inLanguage": [
+        "zh-CN",
+        "en"
+      ],
+      "publisher": {
+        "@id": "https://www.nullusengine.com/#organization"
       }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.nullusengine.com/#organization",
+      "name": "Nullus Engine",
+      "url": "https://www.nullusengine.com/",
+      "logo": "https://www.nullusengine.com/assets/NullusIcon.svg",
+      "sameAs": [
+        "https://github.com/NullusEngine"
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://www.nullusengine.com/#software",
+      "name": "Nullus Engine",
+      "url": "https://www.nullusengine.com/",
+      "description": "A native C++20 game engine for real-time 3D creation with an Editor, FrameGraph, explicit RHI, C# and Lua scripting, and desktop Player builds.",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "image": "https://www.nullusengine.com/assets/og-cover.jpg",
+      "publisher": {
+        "@id": "https://www.nullusengine.com/#organization"
+      }
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://www.nullusengine.com/#source",
+      "name": "Nullus Engine source code",
+      "codeRepository": "https://github.com/NullusEngine/Nullus",
+      "programmingLanguage": "C++",
+      "license": "https://github.com/NullusEngine/Nullus/blob/main/LICENSE",
+      "author": {
+        "@id": "https://www.nullusengine.com/#organization"
+      }
+    }
+  ]
+}
     </script>
   </head>
   <body>
@@ -104,7 +126,7 @@
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-3 18.51c.48.09.65-.21.65-.46v-1.62c-2.65.58-3.21-1.13-3.21-1.13-.44-1.1-1.07-1.4-1.07-1.4-.87-.6.07-.59.07-.59.96.07 1.46.99 1.46.99.86 1.46 2.26 1.04 2.81.8.09-.62.34-1.04.61-1.28-2.11-.24-4.33-1.05-4.33-4.69 0-1.04.37-1.89.98-2.56-.1-.24-.43-1.21.09-2.52 0 0 .8-.26 2.62.98A9.1 9.1 0 0 1 12 7.2c.81 0 1.62.11 2.38.33 1.82-1.24 2.62-.98 2.62-.98.52 1.31.19 2.28.09 2.52.61.67.98 1.52.98 2.56 0 3.65-2.23 4.45-4.35 4.68.35.3.65.88.65 1.77v2.47c0 .25.17.55.66.46A9.5 9.5 0 0 0 12 2.5Z" /></svg>
               <span>GitHub</span>
             </a>
-            <button class="lang-toggle" type="button" data-language-toggle aria-label="切换为 English">EN</button>
+            <a class="lang-toggle" href="en/" data-file-href="en/index.html" hreflang="en" data-language-toggle aria-label="Switch to English">EN</a>
             <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="打开菜单">
               <span></span><span></span>
             </button>
@@ -143,7 +165,7 @@
             </div>
 
             <div class="hero-visual reveal reveal-delay" aria-label="Nullus Editor 工作区预览">
-              <div class="visual-topline"><span>NULLUS EDITOR / Sponza</span><span class="live-status"><i></i> LIVE PREVIEW</span></div>
+              <div class="visual-topline"><span>NULLUS EDITOR / Sponza</span><span class="live-status"><i></i> EDITOR SCREENSHOT</span></div>
               <div class="editor-frame">
                 <div class="editor-toolbar">
                   <span class="window-dots"><i></i><i></i><i></i></span>
@@ -151,7 +173,7 @@
                   <span class="toolbar-actions"><b></b><b></b><b></b></span>
                 </div>
                 <div class="editor-screenshot">
-                  <img src="assets/editor.png" alt="Nullus Editor 展示了场景视图、Hierarchy、Inspector 和 Asset Browser" />
+                  <img src="assets/editor-1920.jpg" width="1920" height="1044" decoding="async" fetchpriority="high" alt="Nullus Editor 展示了场景视图、Hierarchy、Inspector 和 Asset Browser" />
                   <div class="scanline" aria-hidden="true"></div>
                 </div>
               </div>
@@ -234,6 +256,7 @@
                 <div class="feature-icon icon-rhi" aria-hidden="true"><svg viewBox="0 0 64 48" focusable="false"><path d="M8 39h48"/><path d="M14 34V20h8v14M28 34V12h8v22M42 34V17h8v17"/><path d="M18 20 32 12l14 5"/></svg></div>
                 <h3 data-i18n="featureRenderTitle">显式多后端渲染</h3>
                 <p data-i18n="featureRenderText">FrameGraph、HLSL 和统一 RHI 让 DX12、Vulkan 与 Metal 共享同一套渲染语言。</p>
+                <a class="card-link" href="zh-cn/rendering/" data-file-href="zh-cn/rendering/index.html" data-i18n="featureRenderLink">了解渲染架构 <span aria-hidden="true">↗</span></a>
                 <div class="mini-diagram" aria-hidden="true"><span>GAME</span><i></i><span>RENDER</span><i></i><span>RHI</span></div>
               </article>
 
@@ -242,7 +265,7 @@
                 <div class="feature-icon icon-editor" aria-hidden="true"><svg viewBox="0 0 64 48" focusable="false"><rect x="5" y="6" width="54" height="36" rx="4"/><path d="M5 16h54M15 16v26M22 23h29M22 31h18"/><circle cx="11" cy="11" r="1.5"/><circle cx="16" cy="11" r="1.5"/><circle cx="21" cy="11" r="1.5"/></svg></div>
                 <h3 data-i18n="featureEditorTitle">Editor 内完成创作</h3>
                 <p data-i18n="featureEditorText">Hierarchy、Scene View、Inspector、播放控制和 Asset Browser 组成日常编辑闭环。</p>
-                <div class="card-link" data-i18n="learnMore">查看工作区 <span>↗</span></div>
+                <a class="card-link" data-doc-link data-doc-zh="https://github.com/NullusEngine/Nullus/blob/main/Docs/zh-CN/editor/workspace.md" data-doc-en="https://github.com/NullusEngine/Nullus/blob/main/Docs/en/editor/workspace.md" href="https://github.com/NullusEngine/Nullus/blob/main/Docs/zh-CN/editor/workspace.md" target="_blank" rel="noreferrer" data-i18n="featureEditorLink">了解编辑器 <span aria-hidden="true">↗</span></a>
               </article>
 
               <article class="feature-card reveal reveal-delay-short">
@@ -250,7 +273,7 @@
                 <div class="feature-icon icon-assets" aria-hidden="true"><svg viewBox="0 0 64 48" focusable="false"><path d="m32 5 19 10-19 10-19-10 19-10Z"/><path d="M13 15v18l19 10 19-10V15M32 25v18"/><path d="m13 24 19 10 19-10"/></svg></div>
                 <h3 data-i18n="featureAssetsTitle">资产直接进入场景</h3>
                 <p data-i18n="featureAssetsText">模型、材质、纹理、Prefab 与场景序列化都连接到项目级资产数据库。</p>
-                <div class="card-link" data-i18n="learnMore">查看资产管线 <span>↗</span></div>
+                <a class="card-link" data-doc-link data-doc-zh="https://github.com/NullusEngine/Nullus/blob/main/Docs/zh-CN/assets/pipeline.md" data-doc-en="https://github.com/NullusEngine/Nullus/blob/main/Docs/en/assets/pipeline.md" href="https://github.com/NullusEngine/Nullus/blob/main/Docs/zh-CN/assets/pipeline.md" target="_blank" rel="noreferrer" data-i18n="featureAssetsLink">了解资产管线 <span aria-hidden="true">↗</span></a>
               </article>
 
               <article class="feature-card reveal">
@@ -266,7 +289,7 @@
                 <div class="simulation-orbit" aria-hidden="true"><svg viewBox="0 0 64 48" focusable="false"><ellipse cx="32" cy="24" rx="25" ry="10"/><ellipse cx="32" cy="24" rx="25" ry="10" transform="rotate(60 32 24)"/><ellipse cx="32" cy="24" rx="25" ry="10" transform="rotate(-60 32 24)"/><circle cx="32" cy="24" r="4"/><circle cx="54" cy="18" r="3"/><circle cx="15" cy="35" r="3"/></svg></div>
                 <h3 data-i18n="featureSimTitle">让世界开始运动</h3>
                 <p data-i18n="featureSimText">物理、角色控制、动画和粒子工作流共享场景与运行时边界。</p>
-                <div class="card-link" data-i18n="learnMore">查看运行时 <span>↗</span></div>
+                <a class="card-link" data-doc-link data-doc-zh="https://github.com/NullusEngine/Nullus/blob/main/Docs/zh-CN/physics/roadmap.md" data-doc-en="https://github.com/NullusEngine/Nullus/blob/main/Docs/en/physics/roadmap.md" href="https://github.com/NullusEngine/Nullus/blob/main/Docs/zh-CN/physics/roadmap.md" target="_blank" rel="noreferrer" data-i18n="featureSimLink">了解物理系统 <span aria-hidden="true">↗</span></a>
               </article>
 
               <article class="feature-card feature-card-build reveal reveal-delay-short">
@@ -274,7 +297,7 @@
                 <div class="build-label" aria-hidden="true"><span>COOK</span><i></i><span>PACK</span><i></i><span>PLAY</span></div>
                 <h3 data-i18n="featureBuildTitle">从项目到桌面 Player</h3>
                 <p data-i18n="featureBuildText">Build Profile 收集依赖、Cook 内容并组装可运行的桌面 Player。</p>
-                <div class="card-link" data-i18n="learnMore">查看构建流程 <span>↗</span></div>
+                <a class="card-link" data-doc-link data-doc-zh="https://github.com/NullusEngine/Nullus/blob/main/Docs/zh-CN/platform-build/packaging.md" data-doc-en="https://github.com/NullusEngine/Nullus/blob/main/Docs/en/platform-build/packaging.md" href="https://github.com/NullusEngine/Nullus/blob/main/Docs/zh-CN/platform-build/packaging.md" target="_blank" rel="noreferrer" data-i18n="featureBuildLink">了解 Player 打包 <span aria-hidden="true">↗</span></a>
               </article>
             </div>
           </div>
@@ -328,7 +351,7 @@
               <p data-i18n="docsLede">官网负责告诉你 Nullus 能做什么，手册负责带你把它跑起来。选择一条入口，继续深入真实的项目文件与工作流。</p>
             </div>
             <div class="docs-grid">
-              <a class="doc-card doc-card-feature reveal" data-doc-link data-doc-zh="https://github.com/NullusEngine/Nullus/blob/main/Docs/zh-CN/getting-started/build.md" data-doc-en="https://github.com/NullusEngine/Nullus/blob/main/Docs/en/getting-started/build.md" href="https://github.com/NullusEngine/Nullus/blob/main/Docs/zh-CN/getting-started/build.md" target="_blank" rel="noreferrer">
+              <a class="doc-card doc-card-feature reveal" href="zh-cn/getting-started/" data-file-href="zh-cn/getting-started/index.html">
                 <div class="doc-card-top"><span class="doc-kicker">01 / GET STARTED</span><span class="doc-arrow" aria-hidden="true">↗</span></div>
                 <div class="doc-icon doc-icon-terminal" aria-hidden="true"><svg viewBox="0 0 56 56" focusable="false"><rect x="7" y="9" width="42" height="38" rx="5"/><path d="M7 19h42M14 14h.01M19 14h.01M24 14h.01M17 28l6 5-6 5M28 38h12"/></svg></div>
                 <h3 data-i18n="docsBuildTitle">环境准备与构建</h3>
@@ -371,8 +394,8 @@
           <div class="container">
             <div class="gallery-heading reveal"><div><p class="eyebrow"><span>06</span><span data-i18n="galleryEyebrow">BUILT IN THE EDITOR</span></p><h2 data-i18n="galleryTitle">让每一帧都保持可见</h2></div><a class="text-link" href="https://github.com/NullusEngine/Nullus/tree/main/Docs/Screenshots" target="_blank" rel="noreferrer" data-i18n="galleryLink">查看更多截图 <span>↗</span></a></div>
             <div class="gallery-grid">
-              <figure class="gallery-main reveal"><div class="gallery-image-wrap"><img src="assets/editor.png" alt="Nullus Editor 场景编辑器界面" loading="lazy" /><span class="image-label">SCENE VIEW / EDITOR</span></div><figcaption><span>Scene View</span><span>Hierarchy · Inspector · Asset Browser</span></figcaption></figure>
-              <figure class="gallery-side reveal reveal-delay"><div class="gallery-image-wrap"><img src="assets/launcher.png" alt="Nullus Hub 项目启动器界面" loading="lazy" /><span class="image-label">NULLUS HUB</span></div><figcaption><span>Project Launcher</span><span>Create · Open · Manage</span></figcaption></figure>
+              <figure class="gallery-main reveal"><div class="gallery-image-wrap"><img src="assets/editor-1920.jpg" width="1920" height="1044" decoding="async" alt="Nullus Editor 场景编辑器界面" loading="lazy" /><span class="image-label">SCENE VIEW / EDITOR</span></div><figcaption><span>Scene View</span><span>Hierarchy · Inspector · Asset Browser</span></figcaption></figure>
+              <figure class="gallery-side reveal reveal-delay"><div class="gallery-image-wrap"><img src="assets/launcher.png" width="1282" height="799" decoding="async" alt="Nullus Hub 项目启动器界面" loading="lazy" /><span class="image-label">NULLUS HUB</span></div><figcaption><span>Project Launcher</span><span>Create · Open · Manage</span></figcaption></figure>
             </div>
           </div>
         </section>
@@ -381,7 +404,7 @@
           <div class="container start-grid">
             <div class="section-heading reveal">
               <p class="eyebrow"><span>07</span><span data-i18n="startEyebrow">FIRST RUN</span></p>
-              <h2 data-i18n="startTitle">三条命令，进入你的第一个场景</h2>
+              <h2 data-i18n="startTitle">从源码开始构建</h2>
               <p data-i18n="startLede">准备依赖、配置构建目录，然后启动 Editor。平台脚本保持清晰，项目入口保持一致。</p>
             <div class="requirements"><span>Git</span><span>CMake ≥ 3.22</span><span>C++20</span><span>Python ≥ 3.8</span><span>.NET 8.0.408</span></div>
             </div>
@@ -397,10 +420,10 @@
 git clone https://github.com/NullusEngine/Nullus.git
 cd Nullus
 
-<span class="terminal-comment"># prepare + build Editor</span>
+<span class="terminal-comment"># prepare + build Editor and Launcher</span>
 .<span class="terminal-prompt">\</span>SetupDependencies.bat
 cmake -S . -B build -G <span class="terminal-string">"Visual Studio 17 2022"</span> -A x64
-cmake --build build --config Debug --target Editor</code></pre>
+cmake --build build --config Debug --target Editor Launcher</code></pre>
                 <div class="terminal-status"><span><i></i> <span data-i18n="terminalReady">Ready to build</span></span><span data-terminal-backend>DX12 default</span></div>
               </div>
             </div>

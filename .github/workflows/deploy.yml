@@ -23,6 +23,7 @@ jobs:
 
       - name: Validate website
         run: |
+          python3 deploy/generate_guides.py --check
           python3 deploy/validate_site.py
           node --check script.js
 

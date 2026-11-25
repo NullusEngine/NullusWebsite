@@ -41,7 +41,11 @@ test -s "$archive"
 if [[ ! -d "$release" ]]; then
   stage="$(mktemp -d "$base/releases/.stage-XXXXXXXX")"
   tar -xzf "$archive" -C "$stage"
-  for file in index.html zh-cn/index.html en/index.html styles.css script.js robots.txt sitemap.xml assets/NullusIcon.svg; do
+  for file in index.html zh-cn/index.html en/index.html \
+    zh-cn/rendering/index.html en/rendering/index.html \
+    zh-cn/getting-started/index.html en/getting-started/index.html \
+    styles.css script.js robots.txt sitemap.xml assets/NullusIcon.svg \
+    assets/editor-1920.jpg assets/og-cover.jpg assets/favicon.png; do
     test -s "$stage/$file"
   done
   chmod -R a+rX "$stage"
@@ -60,7 +64,9 @@ ln -sfn -- "releases/$release_id" "$pending_link"
 mv -Tf -- "$pending_link" "$base/current"
 switched=1
 
-for path in / /zh-cn/ /en/ /styles.css /script.js /robots.txt /sitemap.xml /assets/NullusIcon.svg; do
+for path in / /zh-cn/ /en/ /zh-cn/rendering/ /en/rendering/ \
+  /zh-cn/getting-started/ /en/getting-started/ /styles.css /script.js \
+  /robots.txt /sitemap.xml /assets/NullusIcon.svg /assets/editor-1920.jpg /assets/og-cover.jpg /assets/favicon.png; do
   curl --fail --silent --show-error --noproxy '*' --connect-timeout 5 --max-time 15 \
     --resolve www.nullusengine.com:443:127.0.0.1 \
     "https://www.nullusengine.com$path" -o /dev/null

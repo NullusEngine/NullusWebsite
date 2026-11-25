@@ -34,16 +34,21 @@ const translations = {
     featuresLede: '从第一块几何体到最终 Player，每一层都连接到清晰、可观察、可扩展的引擎主线。',
     featureRenderTitle: '显式多后端渲染',
     featureRenderText: 'FrameGraph、HLSL 和统一 RHI 让 DX12、Vulkan 与 Metal 共享同一套渲染语言。',
+    featureRenderLink: '了解渲染架构',
     featureEditorTitle: 'Editor 内完成创作',
     featureEditorText: 'Hierarchy、Scene View、Inspector、播放控制和 Asset Browser 组成日常编辑闭环。',
+    featureEditorLink: '了解编辑器',
     featureAssetsTitle: '资产直接进入场景',
     featureAssetsText: '模型、材质、纹理、Prefab 与场景序列化都连接到项目级资产数据库。',
+    featureAssetsLink: '了解资产管线',
     featureScriptTitle: 'C# 与 Lua 并行可用',
     featureScriptText: '共享原生脚本 ABI、组件生命周期和输入时间系统，在 Editor 内持续迭代。',
     featureSimTitle: '让世界开始运动',
     featureSimText: '物理、角色控制、动画和粒子工作流共享场景与运行时边界。',
+    featureSimLink: '了解物理系统',
     featureBuildTitle: '从项目到桌面 Player',
     featureBuildText: 'Build Profile 收集依赖、Cook 内容并组装可运行的桌面 Player。',
+    featureBuildLink: '了解 Player 打包',
     learnMore: '查看详情',
     docsEyebrow: 'DEVELOPER PATH',
     docsTitle: '从第一条命令到引擎内部',
@@ -94,7 +99,7 @@ const translations = {
     galleryTitle: '让每一帧都保持可见',
     galleryLink: '查看更多截图',
     startEyebrow: 'FIRST RUN',
-    startTitle: '三条命令，进入你的第一个场景',
+    startTitle: '从源码开始构建',
     startLede: '准备依赖、配置构建目录，然后启动 Editor。平台脚本保持清晰，项目入口保持一致。',
     terminalReady: 'Ready to build',
     ctaEyebrow: 'YOUR NEXT WORLD STARTS HERE',
@@ -142,16 +147,21 @@ const translations = {
     featuresLede: 'From the first mesh to the final Player, every layer connects to a clear, observable, extensible engine mainline.',
     featureRenderTitle: 'Explicit multi-backend rendering',
     featureRenderText: 'FrameGraph, HLSL, and a unified RHI give DX12, Vulkan, and Metal one rendering language.',
+    featureRenderLink: 'Explore rendering',
     featureEditorTitle: 'Create inside the Editor',
     featureEditorText: 'Hierarchy, Scene View, Inspector, play controls, and Asset Browser form a daily editing loop.',
+    featureEditorLink: 'Explore the Editor',
     featureAssetsTitle: 'Assets flow into the scene',
     featureAssetsText: 'Models, materials, textures, Prefabs, and serialized scenes connect to a project asset database.',
+    featureAssetsLink: 'Explore the asset pipeline',
     featureScriptTitle: 'C# and Lua side by side',
     featureScriptText: 'Share a native scripting ABI, component lifecycle, input, and time systems while iterating in the Editor.',
     featureSimTitle: 'Make the world move',
     featureSimText: 'Physics, character control, animation, and particles share the same scene and runtime boundaries.',
+    featureSimLink: 'Explore physics',
     featureBuildTitle: 'From project to desktop Player',
     featureBuildText: 'Build Profiles collect dependencies, cook content, and assemble a runnable desktop Player.',
+    featureBuildLink: 'Explore Player builds',
     learnMore: 'Learn more',
     docsEyebrow: 'DEVELOPER PATH',
     docsTitle: 'From the first command to the engine internals',
@@ -167,7 +177,7 @@ const translations = {
     docsArchitectureMeta: 'Runtime · Editor · Modules',
     docsRead: 'Read the handbook',
     docsFoot: 'Docs/ is the handbook source. Chinese and English pages are kept in sync.',
-    docsHandbook: 'Chinese handbook',
+    docsHandbook: 'English handbook',
     docsWiki: 'Wiki',
     platformsEyebrow: 'BUILD SURFACE',
     platformsTitle: 'Choose your runtime mainline',
@@ -202,7 +212,7 @@ const translations = {
     galleryTitle: 'Keep every frame in view',
     galleryLink: 'View more screenshots',
     startEyebrow: 'FIRST RUN',
-    startTitle: 'Three commands to your first scene',
+    startTitle: 'Build Nullus from source',
     startLede: 'Prepare dependencies, configure a build directory, then launch the Editor. Platform scripts stay explicit and the project entry stays consistent.',
     terminalReady: 'Ready to build',
     ctaEyebrow: 'YOUR NEXT WORLD STARTS HERE',
@@ -220,7 +230,7 @@ const translations = {
 const platformCode = {
   windows: {
     backend: 'DX12 default',
-    code: `<span class="terminal-comment"># clone</span>\ngit clone https://github.com/NullusEngine/Nullus.git\ncd Nullus\n\n<span class="terminal-comment"># prepare + build Editor</span>\n.<span class="terminal-prompt">\\</span>SetupDependencies.bat\ncmake -S . -B build -G <span class="terminal-string">"Visual Studio 17 2022"</span> -A x64\ncmake --build build --config Debug --target Editor`,
+    code: `<span class="terminal-comment"># clone</span>\ngit clone https://github.com/NullusEngine/Nullus.git\ncd Nullus\n\n<span class="terminal-comment"># prepare + build Editor and Launcher</span>\n.<span class="terminal-prompt">\\</span>SetupDependencies.bat\ncmake -S . -B build -G <span class="terminal-string">"Visual Studio 17 2022"</span> -A x64\ncmake --build build --config Debug --target Editor Launcher`,
   },
   linux: {
     backend: 'Vulkan default',
@@ -228,7 +238,7 @@ const platformCode = {
   },
   macos: {
     backend: 'Metal default',
-    code: `<span class="terminal-comment"># clone</span>\ngit clone https://github.com/NullusEngine/Nullus.git\ncd Nullus\n\n<span class="terminal-comment"># prepare + build Editor</span>\n./SetupDependencies.sh\n./build_macos.sh debug`,
+    code: `<span class="terminal-comment"># clone</span>\ngit clone https://github.com/NullusEngine/Nullus.git\ncd Nullus\n\n<span class="terminal-comment"># prepare + build Editor and Launcher</span>\n./SetupDependencies.sh\nNLS_BUILD_TARGETS=<span class="terminal-string">"Editor Launcher"</span> ./build_macos.sh debug`,
   },
 };
 
@@ -266,30 +276,25 @@ const applyLanguage = (language) => {
     languageToggle.setAttribute('aria-label', language === 'zh' ? 'Switch to English' : '切换为中文');
   }
 
-  localStorage.setItem('nullus-language', language);
 };
 
 const setupLanguageToggle = () => {
   const languageToggle = document.querySelector('[data-language-toggle]');
   if (!languageToggle) return;
 
-  const pathLanguage = window.location.pathname.toLowerCase().startsWith('/en/')
-    ? 'en'
-    : window.location.pathname.toLowerCase().startsWith('/zh-cn/')
-      ? 'zh'
-      : null;
-  const savedLanguage = localStorage.getItem('nullus-language');
-  const initialLanguage = pathLanguage ?? (savedLanguage === 'en' ? 'en' : 'zh');
+  const initialLanguage = document.documentElement.lang.toLowerCase().startsWith('en') ? 'en' : 'zh';
   applyLanguage(initialLanguage);
 
+  if (window.location.protocol === 'file:') {
+    document.querySelectorAll('[data-file-href]').forEach((link) => {
+      link.href = link.dataset.fileHref;
+    });
+  }
+
   languageToggle.addEventListener('click', () => {
-    const nextLanguage = document.documentElement.lang === 'zh-CN' ? 'en' : 'zh';
-    if (pathLanguage) {
-      const nextPath = nextLanguage === 'en' ? '/en/' : '/zh-cn/';
-      window.location.assign(`${nextPath}${window.location.hash}`);
-      return;
-    }
-    applyLanguage(nextLanguage);
+    const target = new URL(languageToggle.href);
+    target.hash = window.location.hash;
+    languageToggle.href = target.href;
   });
 };
 
