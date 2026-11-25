@@ -1,0 +1,58 @@
+name: Deploy website
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: nullus-website-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out website
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Validate website
+        run: |
+          python3 deploy/validate_site.py
+          node --check script.js
+
+      - name: Publish website
+        env:
+          DEPLOY_KEY: ${{ secrets.NULLUS_DEPLOY_KEY }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$GITHUB_SHA" =~ ^[0-9a-f]{40}$ ]]
+          test -n "$DEPLOY_KEY"
+
+          key_file="$RUNNER_TEMP/nullus-deploy-key"
+          archive="$RUNNER_TEMP/nullus-site.tar.gz"
+          trap 'rm -f "$key_file" "$archive"' EXIT
+          printf '%s\n' "$DEPLOY_KEY" > "$key_file"
+          chmod 600 "$key_file"
+
+          git archive --format=tar "$GITHUB_SHA" \
+            index.html zh-cn en assets styles.css script.js robots.txt sitemap.xml | gzip > "$archive"
+
+          ssh_options=(
+            -i "$key_file"
+            -o BatchMode=yes
+            -o IdentitiesOnly=yes
+            -o StrictHostKeyChecking=yes
+            -o "UserKnownHostsFile=$GITHUB_WORKSPACE/.github/known_hosts"
+            -o ConnectTimeout=15
+          )
+          scp "${ssh_options[@]}" "$archive" \
+            "nullusdeploy@45.205.25.90:/srv/nullus-website/incoming/$GITHUB_SHA.tar.gz"
+          ssh "${ssh_options[@]}" nullusdeploy@45.205.25.90 \
+            "bash -s -- $GITHUB_SHA" < deploy/deploy.sh
